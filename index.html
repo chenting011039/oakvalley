@@ -77,6 +77,7 @@
             justify-content: center;
             color: white;
             text-align: center;
+            margin-top: 20px; /* Add default margin */
         }
 
         .hero-content {
@@ -769,7 +770,7 @@
         /* Update mobile-specific styles */
         @media (max-width: 768px) {
             body {
-                padding-top: 140px; /* Increased for mobile */
+                padding-top: 140px; /* Keep existing padding */
             }
 
             .nav-container {
@@ -791,18 +792,26 @@
             }
 
             .hero-section {
-                margin-top: 20px; /* Add margin to push content down */
-                min-height: 50vh;
+                margin-top: 40px; /* Increased margin for mobile */
+                padding-top: 60px; /* Add padding to push content down */
+                min-height: 70vh; /* Ensure enough height */
+                height: auto; /* Allow height to adjust */
             }
 
             .hero-content {
-                padding: 20px;
-                margin-top: 20px; /* Add margin to push content down */
+                padding: 30px 20px; /* Increased padding */
+                margin-top: 40px; /* Push content down further */
             }
 
             .hero-content h1 {
                 font-size: 1.8rem;
-                margin-top: 20px; /* Add margin to push title down */
+                margin-bottom: 20px;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+                line-height: 1.4;
+                margin: 10px 0;
             }
         }
 
