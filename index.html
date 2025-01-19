@@ -766,9 +766,7 @@
             }
         }
 
-        /* Add or update these mobile-specific styles */
-
-        /* Navigation adjustments */
+        /* Update mobile-specific styles */
         @media (max-width: 768px) {
             body {
                 padding-top: 140px; /* Increased for mobile */
@@ -791,28 +789,20 @@
             .nav-links a {
                 font-size: 0.9rem;
             }
-        }
 
-        /* Hero section adjustments */
-        @media (max-width: 768px) {
             .hero-section {
-                margin-top: 0; /* Remove any top margin */
-                min-height: 50vh; /* Ensure minimum height */
+                margin-top: 20px; /* Add margin to push content down */
+                min-height: 50vh;
             }
 
             .hero-content {
-                padding-top: 20px; /* Add some top padding */
-                padding: 15px 20px;
-                width: 90%;
+                padding: 20px;
+                margin-top: 20px; /* Add margin to push content down */
             }
 
             .hero-content h1 {
                 font-size: 1.8rem;
-            }
-
-            .hero-content p {
-                font-size: 1rem;
-                line-height: 1.2;
+                margin-top: 20px; /* Add margin to push title down */
             }
         }
 
