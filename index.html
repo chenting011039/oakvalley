@@ -98,8 +98,19 @@
         .hero-content p {
             font-size: 1.2rem;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-            line-height: 0.6;
-            margin-top: 5px;
+            line-height: 1.4;
+            margin: 10px 0;
+        }
+
+        .hero-description {
+            margin-top: 30px;
+        }
+
+        .hero-description p {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin: 8px 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
         }
 
         /* Section header styles */
@@ -375,55 +386,89 @@
         /* CTA section styles */
         .cta-section {
             background-color: #006401;
+            padding: 60px 0 30px 0;
             color: white;
-            padding: 2rem 2rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .contact-info, .wechat-section {
             text-align: center;
         }
 
-        .cta-button {
-            background-color: #a41f11;
+        .contact-info h3, .wechat-section h3 {
             color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 4px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            margin-top: 1rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
         }
 
-        .contact-info {
-            text-align: center;
-            margin-top: 2rem;
+        .contact-details {
+            text-align: left;
+            max-width: 300px;
+            margin: 0 auto;
         }
 
-        .contact-info p {
-            margin: 0.5rem 0;
+        .contact-details p {
+            margin: 15px 0;
             font-size: 1.1rem;
+            color: white;
+        }
+
+        .contact-details i {
+            color: white;
+            width: 25px;
+            margin-right: 10px;
+        }
+
+        .qr-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .qr-container p {
+            color: white;
         }
 
         .wechat-qr {
-            width: 150px;
-            height: 150px;
-            margin-top: 10px;
-            border-radius: 8px;
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            background-color: white;
+            padding: 10px;
+            border-radius: 10px;
         }
 
         .copyright {
-            margin-top: 30px;
-            font-size: 0.9rem;
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
             color: white;
-            opacity: 0.8;
         }
 
-        .email-link {
-            color: white;
-            text-decoration: none;
-            transition: opacity 0.3s ease;
-        }
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
 
-        .email-link:hover {
-            opacity: 0.8;
+            .contact-details {
+                padding: 0 20px;
+            }
+
+            .wechat-qr {
+                width: 150px;
+                height: 150px;
+            }
         }
 
         /* Research Fields Section */
@@ -863,6 +908,245 @@
                 font-size: 1.8rem;
             }
         }
+
+        .philosophy-section {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+
+        .carousel-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+            height: 500px; /* Increased height to accommodate title and full image */
+        }
+
+        .philosophy-card {
+            flex: 0 0 100%;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px; /* Reduced gap between title and image */
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            color: #006401;
+            margin: 0;
+            padding: 5px 0; /* Reduced padding */
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .philosophy-card img {
+            max-width: 100%;
+            max-height: 450px; /* Adjusted to ensure full image visibility */
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .carousel-button {
+            position: static; /* Changed from absolute */
+            width: 40px;
+            height: 40px;
+            background: #006401;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            z-index: 2;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+            flex-shrink: 0; /* Prevent button from shrinking */
+        }
+
+        .carousel-button:hover {
+            opacity: 1;
+        }
+
+        .carousel-button.prev {
+            left: 20px;
+        }
+
+        .carousel-button.next {
+            right: 20px;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            background: #ccc;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            background: #006401;
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 768px) {
+            .carousel-wrapper {
+                gap: 10px;
+                padding: 0 10px;
+            }
+
+            .carousel-button {
+                width: 30px;
+                height: 30px;
+                font-size: 14px;
+            }
+
+            .card-title {
+                font-size: 1.2rem;
+                padding: 3px 0;
+            }
+
+            .carousel-track {
+                height: 350px; /* Adjusted for mobile */
+            }
+
+            .philosophy-card img {
+                max-height: 300px;
+            }
+        }
+
+        .services-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            text-align: center;
+            margin-bottom: 20px; /* Increased margin for better spacing */
+        }
+
+        .service-icon img {
+            width: 80px;  /* Increased from 50px */
+            height: 80px; /* Increased from 50px */
+            object-fit: contain;
+        }
+
+        .service-card h3 {
+            color: #006401;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .service-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .service-list li {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .service-list li:before {
+            content: "•";
+            color: #006401;
+            position: absolute;
+            left: 0;
+        }
+
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 0 15px;
+            }
+
+            .service-card {
+                padding: 20px;
+            }
+
+            .service-icon img {
+                width: 60px;  /* Increased from 40px */
+                height: 60px; /* Increased from 40px */
+            }
+
+            .service-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .service-list li {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Add these styles for the email link */
+        .contact-details a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-details a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body id="top">
@@ -874,7 +1158,6 @@
             </div>
             <div class="nav-links">
                 <a href="#top">首页</a>
-                <a href="#programs">申请活动</a>
                 <a href="#contact">联系我们</a>
             </div>
         </div>
@@ -882,366 +1165,144 @@
 
     <section class="hero-section">
         <div class="hero-content">
-            <h1>Common App升学活动研创计划</h1>
-            <p>构建一条"高个性化、强深度、广覆盖"的活动发展主线。</p>
-            <p>结合基础知识、科研实践、成果展示与社会影响力，精心打造多维度活动体验与成果。</p>
-            <p>提供涵盖个人项目、科研探索、公益实践等多类型活动的一站式综合解决方案。</p>
-            <p>全面凸显学生活动的深度、广度与独特优势，助力打造脱颖而出的大学申请材料。</p>
-        </div>
-    </section>
-
-    <section class="research-fields">
-        <h2 class="section-title">项目领域</h2>
-        
-        <div class="fields-container">
-            <!-- Biology & Medicine -->
-            <div class="field-category">
-                <h3>生物医学 Biology & Medicine</h3>
-                <ul>
-                    <li>神经退行性疾病的行为及病理机制探究</li>
-                    <li>多糖结合疫苗的制备和评价</li>
-                    <li>抗原检测试剂研发及心血管疾病检测应用</li>
-                    <li>抗肿瘤药物药效的多层次研究</li>
-                    <li>实体瘤的免疫治疗组合策略</li>
-                    <li>消化系统靶向药物治疗</li>
-                    <li>人工智能赋能新药研究及开发</li>
-                </ul>
-            </div>
-
-            <!-- Physics -->
-            <div class="field-category">
-                <h3>物理 Physics</h3>
-                <ul>
-                    <li>新能源电车电池-石墨烯锂电池材料研发</li>
-                    <li>新能源电车电池-磷酸铁锂电池制备</li>
-                    <li>基于Matlab的人体生理信号处理和疾病关联分析</li>
-                    <li>激光物理之激光雷达中的光学</li>
-                    <li>列车智能控制系统设计</li>
-                    <li>天体物理的宇宙学研究</li>
-                </ul>
-            </div>
-
-            <!-- Computer Science -->
-            <div class="field-category">
-                <h3>计算机科学 Computer Science</h3>
-                <ul>
-                    <li>AR/VR 3D虚拟动画模型应用</li>
-                    <li>AIGC下一代知识引擎的开发</li>
-                    <li>基于AI算法的自动驾驶应用研究</li>
-                    <li>数学建模及场景化实践</li>
-                    <li>人工智能神经网络模型的构建探究</li>
-                </ul>
-            </div>
-
-            <!-- Art -->
-            <div class="field-category">
-                <h3>艺术 Art</h3>
-                <ul>
-                    <li>数字艺术与新媒体创作</li>
-                    <li>艺术史与当代艺术研究</li>
-                    <li>视觉传达设计与品牌策划</li>
-                    <li>交互设计与用户体验</li>
-                    <li>艺术策展与展览管理</li>
-                    <li>跨媒介艺术实践</li>
-                </ul>
-            </div>
-
-            <!-- Startup -->
-            <div class="field-category">
-                <h3>创业 Startup</h3>
-                <ul>
-                    <li>商业模式创新与市场策略</li>
-                    <li>创业项目孵化与管理</li>
-                    <li>数字经济与电子商务</li>
-                    <li>社会企业与可持续发展</li>
-                    <li>创新创业生态系统研究</li>
-                    <li>科技创新与商业化应用</li>
-                </ul>
-            </div>
-
-            <!-- More to Come -->
-            <div class="field-category">
-                <h3>更多领域</h3>
-                <ul>
-                    <li>更多研究领域正在开发中...</li>
-                    <li>敬请期待</li>
-                </ul>
+            <h1>橡树谷国际教育</h1>
+            <p>来自硅谷的教育机构</p>
+            <p>美本藤校规划和申请</p>
+            <div class="hero-description">
+                <p>橡树谷国际教育由来自硅谷顶尖科技公司的学生家长</p>
+                <p>与硅谷当地名校申请规划资深顾问</p>
+                <p>以及哈佛教育学院毕业生共同创立</p>
+                <p>基于对教育的深刻洞察</p>
+                <p>致力于为学生提供专业的个性化的升学指导</p>
+                <p>帮助他们在全球竞争中脱颖而出</p>
             </div>
         </div>
     </section>
 
-     <!-- 科研导师简介 Section -->
-     <section class="mentors">
+    <section class="philosophy-section">
         <div class="container">
-            <h2 class="section-title">项目导师简介</h2>
+            <h2 class="section-title">我们的理念</h2>
             
-            <div class="mentor-grid">
-                <!-- First Row -->
-                <!-- Mentor Card 1 -->
-                <div class="mentor-card">
-                    <div class="mentor-image">
-                        <img src="resource/mentor1.jpg" alt="Dr. Sarah Johnson">
-                    </div>
-                    <div class="mentor-info">
-                        <h3>Dr. Sarah Johnson</h3>
-                        <p class="mentor-title">哈佛大学生物医学博士</p>
-                        <div class="mentor-specialties">
-                            <span>研究方向：</span>
-                            <ul>
-                                <li>分子生物学</li>
-                                <li>癌症免疫治疗</li>
-                                <li>基因编辑技术</li>
-                            </ul>
+            <div class="carousel-wrapper">
+                <button class="carousel-button prev">❮</button>
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <!-- Card 1 -->
+                        <div class="philosophy-card">
+                            <h3 class="card-title">聚焦学生底层能力塑造</h3>
+                            <img src="resource/card1.png" alt="Philosophy Card 1">
                         </div>
+                        
+                        <!-- Card 2 -->
+                        <div class="philosophy-card">
+                            <h3 class="card-title">精英顾问导师服务团队</h3>
+                            <img src="resource/card2.png" alt="Philosophy Card 2">
+                        </div>
+                        
+                        <!-- Card 3 -->
+                        <div class="philosophy-card">
+                            <h3 class="card-title">高效定制化升学规划</h3>
+                            <img src="resource/card3.png" alt="Philosophy Card 3">
+                        </div>
+                    
                     </div>
-                </div>
 
-                <!-- Mentor Card 2 -->
-                <div class="mentor-card">
-                    <div class="mentor-image">
-                        <img src="resource/mentor2.jpg" alt="Prof. Michael Chen">
-                    </div>
-                    <div class="mentor-info">
-                        <h3>Prof. Michael Chen</h3>
-                        <p class="mentor-title">麻省理工学院计算机科学博士</p>
-                        <div class="mentor-specialties">
-                            <span>研究方向：</span>
-                            <ul>
-                                <li>人工智能</li>
-                                <li>机器学习</li>
-                                <li>计算机视觉</li>
-                            </ul>
-                        </div>
+                    <div class="carousel-dots">
+                        <span class="carousel-dot active" data-index="0"></span>
+                        <span class="carousel-dot" data-index="1"></span>
+                        <span class="carousel-dot" data-index="2"></span>
                     </div>
                 </div>
-
-                <!-- Mentor Card 3 -->
-                <div class="mentor-card">
-                    <div class="mentor-image">
-                        <img src="resource/mentor3.jpg" alt="Dr. Emma Williams">
-                    </div>
-                    <div class="mentor-info">
-                        <h3>Dr. Emma Williams</h3>
-                        <p class="mentor-title">牛津大学化学博士</p>
-                        <div class="mentor-specialties">
-                            <span>研究方向：</span>
-                            <ul>
-                                <li>有机化学</li>
-                                <li>药物研发</li>
-                                <li>纳米材料</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Mentor Card 4 -->
-                <div class="mentor-card">
-                    <div class="mentor-image">
-                        <img src="resource/mentor4.jpg" alt="Dr. Sarah Johnson">
-                    </div>
-                    <div class="mentor-info">
-                        <h3>Dr. Sarah Johnson</h3>
-                        <p class="mentor-title">哈佛大学生物医学博士</p>
-                        <div class="mentor-specialties">
-                            <span>研究方向：</span>
-                            <ul>
-                                <li>分子生物学</li>
-                                <li>癌症免疫治疗</li>
-                                <li>基因编辑技术</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Second Row -->
-                <!-- Copy of Mentor Card 1 -->
-                <div class="mentor-card">
-                    <div class="mentor-image">
-                        <img src="resource/mentor1.jpg" alt="Dr. Sarah Johnson">
-                    </div>
-                    <div class="mentor-info">
-                        <h3>Dr. Sarah Johnson</h3>
-                        <p class="mentor-title">哈佛大学生物医学博士</p>
-                        <div class="mentor-specialties">
-                            <span>研究方向：</span>
-                            <ul>
-                                <li>分子生物学</li>
-                                <li>癌症免疫治疗</li>
-                                <li>基因编辑技术</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Copy of Mentor Card 2 -->
-                <div class="mentor-card">
-                    <div class="mentor-image">
-                        <img src="resource/mentor2.jpg" alt="Prof. Michael Chen">
-                    </div>
-                    <div class="mentor-info">
-                        <h3>Prof. Michael Chen</h3>
-                        <p class="mentor-title">麻省理工学院计算机科学博士</p>
-                        <div class="mentor-specialties">
-                            <span>研究方向：</span>
-                            <ul>
-                                <li>人工智能</li>
-                                <li>机器学习</li>
-                                <li>计算机视觉</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Copy of Mentor Card 3 -->
-                <div class="mentor-card">
-                    <div class="mentor-image">
-                        <img src="resource/mentor3.jpg" alt="Dr. Emma Williams">
-                    </div>
-                    <div class="mentor-info">
-                        <h3>Dr. Emma Williams</h3>
-                        <p class="mentor-title">牛津大学化学博士</p>
-                        <div class="mentor-specialties">
-                            <span>研究方向：</span>
-                            <ul>
-                                <li>有机化学</li>
-                                <li>药物研发</li>
-                                <li>纳米材料</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Copy of Mentor Card 4 -->
-                <div class="mentor-card">
-                    <div class="mentor-image">
-                        <img src="resource/mentor4.jpg" alt="Dr. Sarah Johnson">
-                    </div>
-                    <div class="mentor-info">
-                        <h3>Dr. Sarah Johnson</h3>
-                        <p class="mentor-title">哈佛大学生物医学博士</p>
-                        <div class="mentor-specialties">
-                            <span>研究方向：</span>
-                            <ul>
-                                <li>分子生物学</li>
-                                <li>癌症免疫治疗</li>
-                                <li>基因编辑技术</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <button class="carousel-button next">❯</button>
             </div>
         </div>
     </section>
-
-    <section class="programs-table" id="programs">
+   
+     <section class="services-section">
         <div class="container">
-            <h2 class="section-title">正在开放报名的重点项目</h2>
-            <div class="table-responsive">
-                <table class="program-table">
-                    <thead>
-                        <tr>
-                            <th>项目名称<br>Program Name</th>
-                            <th>研究方向<br>Research Area</th>
-                            <th>项目时长<br>Duration</th>
-                            <th>项目特色<br>Features</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>基因测序在癌症医疗领域的应用<br>
-                                导师：Dr. Danlu Wu<br>
-                                (Tufts University 生物医学博士后)<br>
-                                <a href="resource/poster1.jpg" target="_blank" style="color: #3498db; text-decoration: underline; font-size: 0.9em;">点击查看海报 →</a></td>
-                            <td>• 分子生物学与基因测序<br>
-                                • 分子诊断技术<br>
-                                • Python数据分析<br>
-                                • AI科普应用开发</td>
-                            <td>• 总计50+1课时<br>
-                                • 8个Session<br>
-                                • 最长1年<br>
-                                • 每周2-3小时</td>
-                            <td>• 科研+NGO双落地<br>
-                                • 个性化项目内容<br>
-                                • 真实科研体验<br>
-                                • 小组规模≤5人<br>
-                                • 三大申请素材：<br>
-                                &nbsp;&nbsp;- 个人项目/网站<br>
-                                &nbsp;&nbsp;- 科研发表<br>
-                                &nbsp;&nbsp;- 创业/公益影响力</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>天体物理与计算机交叉学科项目<br>
-                                导师：Prof. Ji Wang<br>
-                                (Ohio State University 天体物理学教授)<br>
-                                <a href="resource/poster2.jpg" target="_blank" style="color: #3498db; text-decoration: underline; font-size: 0.9em;">点击查看海报 →</a></td>
-                            <td>• 天体物理学<br>
-                                • 计算机科学<br>
-                                • 数据可视化<br>
-                                • 科学传播与公益</td>
-                            <td>• 总计35课时<br>
-                                • 4个Session<br>
-                                • 为期1年<br>
-                                • 每周2-3小时</td>
-                            <td>• 跨学科创新项目<br>
-                                • 科研与公益结合<br>
-                                • 小组规模≤4人<br>
-                                • 多重师资配置：<br>
-                                &nbsp;&nbsp;- 专业领域导师<br>
-                                &nbsp;&nbsp;- 双领域助教<br>
-                                &nbsp;&nbsp;- 课程班主任<br>
-                                • 公益服务支持</td>
-                        </tr>
-                        
-                        <!-- Third Program (new) -->
-                        <tr>
-                            <td>硅谷创业营：AI产品从0到1<br>
-                                导师：Dr. Ting Chen<br>
-                                (佛罗里达大学人工智能博士)<br>
-                                <a href="resource/poster3.jpg" target="_blank" style="color: #3498db; text-decoration: underline; font-size: 0.9em;">点击查看海报 →</a></td>
-                            <td>• 商业模式与融资<br>
-                                • AI产品开发<br>
-                                • Fine-Tune模型开发<br>
-                                • Azure平台应用<br>
-                                • Prompt Engineering</td>
-                            <td>• 总计15+1课时<br>
-                                • 4个Session<br>
-                                • 为期3个月<br>
-                                • 每周2-3小时</td>
-                            <td>• 真实创业与研发体验<br>
-                                • 商业X产品X技术交叉<br>
-                                • 小组规模≤5人<br>
-                                • 项目亮点：<br>
-                                &nbsp;&nbsp;- MVP产品落地<br>
-                                &nbsp;&nbsp;- 商业计划书<br>
-                                &nbsp;&nbsp;- 技术开发实践</td>
-                        </tr>
+            <h2 class="section-title">我们的服务</h2>
+            <div class="services-grid">
+                <!-- Service 1: 升学规划 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="resource/icon1.png" alt="升学规划">
+                    </div>
+                    <h3>升学规划</h3>
+                    <ul class="service-list">
+                        <li>个性化的升学方案制定</li>
+                        <li>学校/专业选择与申请策略</li>
+                        <li>夏校及交流项目申请指导</li>
+                        <li>背景提升活动规划与指导</li>
+                        <li>学术与课外活动时间管理</li>
+                    </ul>
+                </div>
 
-                        <!-- Fourth Program (new) -->
-                        <tr>
-                            <td>动漫书创作营<br>
-                                导师：冥冥 & 嘟噜<br>
-                                (小红书知名漫画创作者)<br>
-                                <a href="resource/poster4.jpg" target="_blank" style="color: #3498db; text-decoration: underline; font-size: 0.9em;">点击查看海报 →</a></td>
-                            <td>• 漫画创作与视觉叙事<br>
-                                • 角色与场景设计<br>
-                                • AI辅助故事创作<br>
-                                • 出版与展览策划<br>
-                                • 媒体宣传推广</td>
-                            <td>• 总计35课时<br>
-                                • 学期内每周1小时<br>
-                                • 暑期强化课程<br>
-                                • 每周约2小时</td>
-                            <td>• 全方位创作体验<br>
-                                • 专业导师指导<br>
-                                • 小组规模≤3人<br>
-                                • 项目亮点：<br>
-                                &nbsp;&nbsp;- 完整漫画作品<br>
-                                &nbsp;&nbsp;- 展览策划执行<br>
-                                &nbsp;&nbsp;- 出版推广机会</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <!-- Service 2: 学术支持 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="resource/icon2.png" alt="学术支持">
+                    </div>
+                    <h3>学术支持</h3>
+                    <ul class="service-list">
+                        <li>课程规划与优化建议</li>
+                        <li>标化考试指导（SAT/ACT/AP/IB等）</li>
+                        <li>学术资源推荐与补充学习计划</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3: 文书与推荐信服务 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="resource/icon3.png" alt="文书与推荐信服务">
+                    </div>
+                    <h3>文书与推荐信服务</h3>
+                    <ul class="service-list">
+                        <li>个人陈述精准定位与创作</li>
+                        <li>文书润色与个性化修改</li>
+                        <li>活动经历包装与突出重点</li>
+                        <li>推荐信内容策划与优化指导</li>
+                    </ul>
+                </div>
+
+                <!-- Service 4: 申请服务 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="resource/icon4.png" alt="申请服务">
+                    </div>
+                    <h3>申请服务</h3>
+                    <ul class="service-list">
+                        <li>海外申请全流程规划与执行</li>
+                        <li>申请材料准备与递交跟踪</li>
+                        <li>面试准备与模拟练习</li>
+                        <li>学校特定要求的材料指导</li>
+                    </ul>
+                </div>
+
+                <!-- Service 5: 入学及后续支持 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="resource/icon5.png" alt="入学及后续支持">
+                    </div>
+                    <h3>入学及后续支持</h3>
+                    <ul class="service-list">
+                        <li>入学准备与适应支持</li>
+                        <li>生活、签证及行前准备指导</li>
+                        <li>跨文化交流技巧培训</li>
+                    </ul>
+                </div>
+
+                <!-- Service 6: 职业发展支持 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="resource/icon6.png" alt="职业发展支持">
+                    </div>
+                    <h3>职业发展支持</h3>
+                    <ul class="service-list">
+                        <li>学生职业兴趣评估与规划</li>
+                        <li>实习机会推荐与申请支持</li>
+                        <li>职业技能提升（如简历撰写与面试）</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -1291,61 +1352,32 @@
         </div>
     </section>
 
-    <!-- Why Choose Us Section -->
-    <section class="why-choose-us">
-        <div class="container">
-            <h2 class="section-title">为什么选择我们</h2>
-            
-            <div class="features-grid">
-                <!-- Feature 1 -->
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <img src="resource/icon1.png" alt="导师阵容">
-                    </div>
-                    <h3>顶尖导师阵容</h3>
-                    <p>与全球知名高校科研导师一对一合作，获得专业指导与推荐信支持</p>
-                </div>
-
-                <!-- Feature 2 -->
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <img src="resource/icon2.png" alt="录取成果">
-                    </div>
-                    <h3>优异录取成果</h3>
-                    <p>藤校申请录取率高达20%，远超社会面平均水平</p>
-                </div>
-
-                <!-- Feature 3 -->
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <img src="resource/icon3.png" alt="论文指导">
-                    </div>
-                    <h3>专业论文指导</h3>
-                    <p>论文发表率达80%，提供细致的投递指引与发表支持</p>
-                </div>
-
-                <!-- Feature 4 -->
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <img src="resource/icon4.png" alt="个性化辅导">
-                    </div>
-                    <h3>个性化辅导</h3>
-                    <p>提供10次导师研究辅导、4次写作指导及2次论文投递辅导</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    
 
     <section class="cta-section" id="contact">
-        <h2>准备好踏上你的专属活动规划之旅了吗？</h2>
-        <button class="cta-button" onclick="window.location.href='mailto:OakValleyEdu@gmail.com'">联系我们</button>
-        <div class="contact-info">
-            <p><a href="mailto:OakValleyEdu@gmail.com" class="email-link"><strong>Email: OakValleyEdu@gmail.com</strong></a></p>
-            <p>微信</p>
-            <img src="resource/wechat.png" alt="WeChat QR Code" class="wechat-qr">
-        </div>
-        <div class="copyright">
-            © 2025 Oaks Valley 橡树谷国际教育 版权所有
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h3>联系方式</h3>
+                    <div class="contact-details">
+                        <p><i class="fas fa-envelope"></i> Email: <a href="mailto:info@oaksvalley.org">info@oaksvalley.org</a></p>
+                        <p><i class="fas fa-map-marker-alt"></i> 地址：Silicon Valley, CA</p>
+                    </div>
+                </div>
+
+                <!-- WeChat QR -->
+                <div class="wechat-section">
+                    <h3>联系我们</h3>
+                    <div class="qr-container">
+                        <img src="resource/wechat.png" alt="WeChat QR Code" class="wechat-qr">
+                        <p>扫描二维码</p>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2025 Oaks Valley 橡树谷国际教育 版权所有
+            </div>
         </div>
     </section>
 
@@ -1534,51 +1566,52 @@
     };
 
     document.addEventListener('DOMContentLoaded', function() {
-        // Get all necessary elements
-        const track = document.querySelector('.testimonial-track');
-        const slides = document.querySelectorAll('.testimonial-card');
-        const nextButton = document.querySelector('.testimonial-button.next');
-        const prevButton = document.querySelector('.testimonial-button.prev');
-        const dotsContainer = document.querySelector('.testimonial-dots');
-        const dots = document.querySelectorAll('.testimonial-dot');
-        
-        let currentSlide = 0;
-        const slideCount = slides.length;
+        const track = document.querySelector('.carousel-track');
+        const cards = document.querySelectorAll('.philosophy-card');
+        const dots = document.querySelectorAll('.carousel-dot');
+        const prevButton = document.querySelector('.carousel-button.prev');
+        const nextButton = document.querySelector('.carousel-button.next');
+        let currentIndex = 0;
 
-        // Function to move to a specific slide
-        function goToSlide(index) {
-            if (index < 0 || index >= slideCount) return;
-            currentSlide = index;
-            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        function updateCarousel() {
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
             
             // Update dots
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === currentSlide);
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
             });
-            
+
             // Update button states
-            prevButton.disabled = currentSlide === 0;
-            nextButton.disabled = currentSlide === slideCount - 1;
+            prevButton.style.opacity = currentIndex === 0 ? '0.5' : '1';
+            nextButton.style.opacity = currentIndex === cards.length - 1 ? '0.5' : '1';
         }
 
-        // Add click handlers
-        nextButton.addEventListener('click', function() {
-            console.log('Next clicked'); // Debug log
-            goToSlide(currentSlide + 1);
+        // Next button click
+        nextButton.addEventListener('click', () => {
+            if (currentIndex < cards.length - 1) {
+                currentIndex++;
+                updateCarousel();
+            }
         });
 
-        prevButton.addEventListener('click', function() {
-            console.log('Prev clicked'); // Debug log
-            goToSlide(currentSlide - 1);
+        // Previous button click
+        prevButton.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
         });
 
-        // Add dot click handlers
+        // Dot navigation
         dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => goToSlide(index));
+            dot.addEventListener('click', () => {
+                currentIndex = index;
+                updateCarousel();
+            });
         });
 
-        // Initialize the carousel
-        goToSlide(0);
+        // Initialize carousel
+        updateCarousel();
     });
     </script>
 
